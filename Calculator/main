@@ -1,0 +1,53 @@
+package p1;
+
+import java.util.Scanner;
+
+public class Calculator{
+
+    public static double calculate(double a, double b, char op) {
+        switch (op) {
+            case '+': return a + b;
+            case '-': return a - b;
+            case '*': return a * b;
+            case '/':
+                if (b == 0) {
+                    System.out.println("Error: Cannot divide by zero.");
+                    return Double.NaN;
+                }
+                return a / b;
+            default:
+                System.out.println("Invalid operator.");
+                return Double.NaN;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double currentResult;
+        char operator;
+        double nextValue;
+        int choice = 1; 
+
+        System.out.println("=== Mobile Calculator with Numeric Loop ===");
+        System.out.print("Enter the first number: ");
+        currentResult = scanner.nextDouble();
+
+        while (choice == 1) {
+            System.out.print("Enter operator (+, -, *, /): ");
+            operator = scanner.next().charAt(0);
+
+            System.out.print("Enter next number: ");
+            nextValue = scanner.nextDouble();
+
+            currentResult = calculate(currentResult, nextValue, operator);
+            System.out.println("Result: " + currentResult);
+
+            System.out.print("Enter 1 to continue or 0 to exit: ");
+            choice = scanner.nextInt();
+        }
+
+        System.out.println("Final result: " + currentResult);
+        System.out.println("Calculator exited.");
+        scanner.close();
+    }
+}
