@@ -1,1 +1,1 @@
-# Calculator
+A simple Java console calculator that works like a mobile phone calculator. It performs basic arithmetic operations (+, -, *, /) and supports continuous calculations using the result of previous operations.
