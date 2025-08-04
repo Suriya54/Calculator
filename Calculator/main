@@ -28,7 +28,6 @@ public class Calculator{
         double nextValue;
         int choice = 1; 
 
-        System.out.println("=== Calculator ===");
         System.out.print("Enter the first number: ");
         currentResult = scanner.nextDouble();
 
@@ -51,4 +50,5 @@ public class Calculator{
         scanner.close();
     }
 }
+
 
